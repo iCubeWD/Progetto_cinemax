@@ -25,6 +25,7 @@ public class Utente {
     }
 
     public String getNome() {
+
         return nome;
     }
 
@@ -38,7 +39,7 @@ public class Utente {
 
     public String getPassword() {
         return password;
-    }   // serve per riscrivere il file
+    }
 
 
     public String getDomicilio() {

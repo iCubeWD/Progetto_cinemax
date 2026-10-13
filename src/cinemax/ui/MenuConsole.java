@@ -53,11 +53,10 @@ public class MenuConsole {
 
     private void stampaMenu(){
         System.out.println("\n=== CINEMAX ===");
-        System.out.println("1) Cliente");
-        System.out.println("2) Proiezionista");
-        System.out.println("3) Bigliettaio");
-        System.out.println("4) Guest");
-        System.out.println("5) Esci");
+        System.out.println("1) Login");
+        System.out.println("2) Registrati");
+        System.out.println("3) Guest");
+        System.out.println("4) Esci");
         System.out.print("Scelta: ");
 
     }
@@ -70,5 +69,22 @@ public class MenuConsole {
         }
 
     }
+
+    private void login(){
+        System.out.print("Username: ");
+        String username = scanner.nextLine().trim();
+        System.out.print("Password: ");
+        String password = scanner.nextLine().trim();
+    }
+
+    private void registrati(){
+
+
+    }
+
+    private void menuGuest(){
+    }
+
+
 }
 
