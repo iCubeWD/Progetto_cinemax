@@ -22,22 +22,21 @@ public class MenuConsole {
         switch (scelta){
 
             case 1:
-
+                //login();
                 break;
 
             case 2:
+                //registrati();
                 break;
 
             case 3:
+                menuGuest();
                 break;
 
             case 4:
-                break;
-
-            case 5:
-                esci=true;
+                esci = true;
                 System.out.println("Arrivederci!");
-                    break;
+                break;
 
             default:
                 System.out.println("Scelta non valida, riprova.");
@@ -79,10 +78,45 @@ public class MenuConsole {
 
     private void registrati(){
 
-
+    //Chiedere i dati della registrazione
+        // chiamare la classe AuthenticationService e la sua funzione registraCliente() (da creare)
     }
 
     private void menuGuest(){
+        //visualizzaProiezioni(), cercaProiezioni()
+
+        boolean esci=false;
+        while(!esci){
+            System.out.println("\nOpzioni disponibili:");
+            System.out.println("1) Cerca le proiezioni ");
+            System.out.println("2) Visualizza i dettagli delle proiezione");
+            System.out.println("3) Registrati");
+            System.out.println("4) Torna al menu principale");
+
+            int scelta=leggiScelta();
+
+            switch (scelta) {
+
+                case 1:
+                    //chiama cercaProiezioni() in ProiezioniService
+                    break;
+
+                case 2:
+                    //chiama visualizzaProiezioni() in ProiezioniService
+                    break;
+
+                case 3:
+                    //chiama registraCliente in AuthenticationService
+                    break;
+
+                case 4:
+                    esci = true;
+                    break;
+
+                default:
+                    System.out.println("Scelta non valida, riprova.");
+            }
+        }
     }
 
 
