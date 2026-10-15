@@ -1,3 +1,4 @@
+// gestisce il login e registrazione
 package cinemax.service;
 
 import cinemax.model.Utente;

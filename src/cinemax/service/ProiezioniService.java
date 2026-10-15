@@ -1,6 +1,6 @@
-package cinemax.service;
-
 // Cerca proiezioni, dettagli proiezione
+
+package cinemax.service;
 
 public class ProiezioniService {
 
