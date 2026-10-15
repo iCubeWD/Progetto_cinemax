@@ -47,6 +47,8 @@ public class Film {
         return etaMinima;
     }
 
+
+
     @Override
     public String toString() {
         return titolo + " (" + anno + ") - " + genere + ", regia di " + regista
