@@ -1,13 +1,21 @@
 package cinemax;
+import cinemax.service.AuthenticationService;
 import cinemax.ui.MenuConsole;
 
-public class Cinemax {
-    public static void main(String[] args) {
+import java.io.IOException;
 
-        MenuConsole menu = new MenuConsole();
+
+public class Cinemax {
+    public static void main(String[] args) throws IOException {
+
+        AuthenticationService auth = new AuthenticationService();
+
+        MenuConsole menu = new MenuConsole(auth);
         menu.avvia();
 
 
-    }
 
+
+    }
 }
+

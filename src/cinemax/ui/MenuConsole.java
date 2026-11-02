@@ -1,13 +1,16 @@
 package cinemax.ui;
 import java.util.Scanner;
+import cinemax.service.AuthenticationService;
+import cinemax.model.Utente;
 
 public class MenuConsole {
     private final Scanner scanner;
-    Scanner sc = new Scanner(System.in);
 
-    public MenuConsole() {
+    private final AuthenticationService auth;
+
+    public MenuConsole(AuthenticationService auth) {
+        this.auth = auth;
         this.scanner = new Scanner(System.in);
-
     }
 
     public void avvia(){
@@ -22,7 +25,7 @@ public class MenuConsole {
         switch (scelta){
 
             case 1:
-                //login();
+                login();
                 break;
 
             case 2:
@@ -69,11 +72,19 @@ public class MenuConsole {
 
     }
 
-    private void login(){
+    private void login() {
         System.out.print("Username: ");
         String username = scanner.nextLine().trim();
         System.out.print("Password: ");
         String password = scanner.nextLine().trim();
+
+        Utente u = auth.login(username, password);
+
+        if (u == null) {
+            System.out.println("Credenziali errate");
+            return;
+        }
+        System.out.println("Benvenuto " + u.getNome() + "! Ruolo: " + u.getRuolo());
     }
 
     private void registrati(){
