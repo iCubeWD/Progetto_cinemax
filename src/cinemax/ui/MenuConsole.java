@@ -1,4 +1,8 @@
 package cinemax.ui;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 import cinemax.service.AuthenticationService;
 import cinemax.model.Utente;
@@ -7,13 +11,14 @@ public class MenuConsole {
     private final Scanner scanner;
 
     private final AuthenticationService auth;
+    private static final DateTimeFormatter FORMATO_INPUT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     public MenuConsole(AuthenticationService auth) {
         this.auth = auth;
         this.scanner = new Scanner(System.in);
     }
 
-    public void avvia(){
+    public void avvia() throws IOException {
 
         boolean esci=false;
 
@@ -29,7 +34,7 @@ public class MenuConsole {
                 break;
 
             case 2:
-                //registrati();
+                registrati();
                 break;
 
             case 3:
@@ -72,6 +77,21 @@ public class MenuConsole {
 
     }
 
+    private LocalDate leggiData() {
+        while (true) {
+            String testo = scanner.nextLine().trim();
+
+            if (testo.isEmpty()) {
+                return null;                     // la data è facoltativa
+            }
+            try {
+                return LocalDate.parse(testo, FORMATO_INPUT);
+            } catch (DateTimeParseException e) {
+                System.out.println("Data non valida, riprova.");
+            }
+        }
+    }
+
     private void login() {
         System.out.print("Username: ");
         String username = scanner.nextLine().trim();
@@ -87,10 +107,32 @@ public class MenuConsole {
         System.out.println("Benvenuto " + u.getNome() + "! Ruolo: " + u.getRuolo());
     }
 
-    private void registrati(){
+    private void registrati() throws IOException {
 
-    //Chiedere i dati della registrazione
-        // chiamare la classe AuthenticationService e la sua funzione registraCliente() (da creare)
+        System.out.print("Nome: ");
+        String nome = scanner.nextLine().trim();
+        System.out.print("Cognome: ");
+        String cognome = scanner.nextLine().trim();
+        System.out.print("Data di nascita (gg/mm/aaaa, invio per saltare): ");
+        LocalDate data = leggiData();
+        System.out.print("Domicilio: ");
+        String domicilio = scanner.nextLine();
+        System.out.print("Username: ");
+        String username = scanner.nextLine().trim();
+        System.out.print("Password: ");
+        String password = scanner.nextLine().trim();
+
+        try {
+            boolean registrato = auth.registraCliente(nome, cognome, data, domicilio, username, password);
+
+            if (registrato) {
+                System.out.println("Registrazione completata.");
+            } else {
+                System.out.println("Username già in uso.");
+            }
+        }catch (IOException e){
+            System.out.println("Errore nel registrazione.");
+        }
     }
 
     private void menuGuest(){
