@@ -59,7 +59,7 @@ public class AuthenticationService {
             String dataTesto = (data == null) ? "" : data.toString();
             String riga = String.join(";", nome, cognome, username, password, dataTesto, domicilio, "CLIENTE"); //unisce i pezzi mettendo il ; in mezzo, nello stesso ordine delle colonne del file: nome, cognome, username, password, data, domicilio, ruolo
 
-        //scrivo in fondo al file
+
         //scrivo in fondo al file (l'a capo va prima, così il nuovo utente parte sempre su una riga nuova)
         Files.writeString(Paths.get("data", "utenti.csv"), "\n" + riga, StandardOpenOption.APPEND);
 
