@@ -94,9 +94,9 @@ public class MenuConsole {
 
     private void login() {
         System.out.print("Username: ");
-        String username = scanner.nextLine().trim();
+        String username = scanner.nextLine();
         System.out.print("Password: ");
-        String password = scanner.nextLine().trim();
+        String password = scanner.nextLine();
 
         Utente u = auth.login(username, password);
 
@@ -105,22 +105,23 @@ public class MenuConsole {
             return;
         }
         System.out.println("Benvenuto " + u.getNome() + "! Ruolo: " + u.getRuolo());
+
     }
 
     private void registrati() throws IOException {
 
         System.out.print("Nome: ");
-        String nome = scanner.nextLine().trim();
+        String nome = scanner.nextLine();
         System.out.print("Cognome: ");
-        String cognome = scanner.nextLine().trim();
+        String cognome = scanner.nextLine();
         System.out.print("Data di nascita (gg/mm/aaaa, invio per saltare): ");
         LocalDate data = leggiData();
         System.out.print("Domicilio: ");
         String domicilio = scanner.nextLine();
         System.out.print("Username: ");
-        String username = scanner.nextLine().trim();
+        String username = scanner.nextLine();
         System.out.print("Password: ");
-        String password = scanner.nextLine().trim();
+        String password = scanner.nextLine();
 
         try {
             boolean registrato = auth.registraCliente(nome, cognome, data, domicilio, username, password);
@@ -135,7 +136,7 @@ public class MenuConsole {
         }
     }
 
-    private void menuGuest(){
+    private void menuGuest() throws IOException {
         //visualizzaProiezioni(), cercaProiezioni()
 
         boolean esci=false;
@@ -159,7 +160,7 @@ public class MenuConsole {
                     break;
 
                 case 3:
-                    //chiama registraCliente in AuthenticationService
+                    registrati();
                     break;
 
                 case 4:

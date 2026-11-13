@@ -7,7 +7,8 @@ public class Proiezione {
 
     private final Film film;
     private LocalDateTime dataOra;   // non final: il proiezionista può modificarla
-    private double prezzo;           // non final: modificabile se non ci sono prenotazioni
+    private double prezzo;          // non final: modificabile se non ci sono prenotazioni
+
     // costruttore + getter + setter
 
     public Proiezione(Film film, LocalDateTime dataOra, double prezzo) {
@@ -28,10 +29,6 @@ public class Proiezione {
         return film;
     }
 
-    public LocalDateTime getFine() {
-        return dataOra.plusMinutes(film.getDurataMinuti());
-    }
-
     public void setDataOra(LocalDateTime dataOra) {
         this.dataOra = dataOra;
     }
@@ -41,7 +38,7 @@ public class Proiezione {
     }
 
     // dentro la classe, tra i campi
-    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+    public static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     @Override
     public String toString() {

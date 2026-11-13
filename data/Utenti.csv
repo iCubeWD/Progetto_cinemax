@@ -1,9 +1,9 @@
 nome;cognome;username;password;dataNascita;domicilio;ruolo
-Mario;Rossi;MarioRo;marioro1988;1988-08-06;Mozzate;PROIEZIONISTA
-Giuseppe;Bagnasco;Bagnato;bagnaca06;2006-06-23;Busto Arsizio;PROIEZIONISTA
-Luca;Moretti;LucaMor;proiez03;1985-03-22;Varese;PROIEZIONISTA
-Ferdinando;Torretta;ToFerdi;giugiu4673;2001-04-10;Locate Varesino;BIGLIETTAIO
-Giulia;Marchetti;GiuMarc;cinema2024x;1988-06-03;Varese;BIGLIETTAIO
-Roberto;Esposito;RoboEsp;popcorn8821;1992-11-11;Como;BIGLIETTAIO
-Chiara;Bellandi;ChiBell;sala7Chiara;1995-07-27;Milano;BIGLIETTAIO
-Marco;Ferretti;MaxFerr;ticket5590;1999-06-01;Varese;BIGLIETTAIO
+Mario;Rossi;MarioRo;0c2b1d5ce469f84570771f3a0905a1de03b1479e26dfbabc87fe681fe52914d9;1988-08-06;Mozzate;PROIEZIONISTA
+Giuseppe;Bagnasco;Bagnato;3dc0a11f4712bf268ae1ae4265c1c667de5929ab797a1aa2277d06fece79f7b9;2006-06-23;Busto Arsizio;PROIEZIONISTA
+Luca;Moretti;LucaMor;11c95fb3852d7e1bc7bf1ca21f4623318d446ad4da93a5260c4ca84e3aa70a7d;1985-03-22;Varese;PROIEZIONISTA
+Ferdinando;Torretta;ToFerdi;933805830ef416759ca6d0e2ed4c35a5fe3c0b457cb6ff261e02d39370445723;2001-04-10;Locate Varesino;BIGLIETTAIO
+Giulia;Marchetti;GiuMarc;c9527fbadc78095c521dd053b82e546dfe83531897d8ce353578f8de0ef68500;1988-06-03;Varese;BIGLIETTAIO
+Roberto;Esposito;RoboEsp;2f824747e7ccfd5d830b771c5b14d129009fd7424aab60a11799565f8601d326;1992-11-11;Como;BIGLIETTAIO
+Chiara;Bellandi;ChiBell;27d96a2a7b41ada78f1953bab1f93f36c68b5d9d4045d47c86f7e272e50c09ce;1995-07-27;Milano;BIGLIETTAIO
+Marco;Ferretti;MaxFerr;8d880e69374cd9b41afec62728ed642c977286fc82e901b08fa85d7469c30e09;1999-06-01;Varese;BIGLIETTAIO

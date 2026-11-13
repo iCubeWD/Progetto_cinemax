@@ -1,5 +1,8 @@
 package cinemax.model;
 
+import cinemax.service.PasswordCript;
+
+
 import java.time.LocalDate;
 
 //la password è mia?
@@ -57,7 +60,7 @@ public class Utente {
     }
 
     public boolean passwordCorretta(String tentativo) {
-        return password.equals(tentativo);
+        return password.equals(PasswordCript.hash(tentativo));
     }
 
     @Override
