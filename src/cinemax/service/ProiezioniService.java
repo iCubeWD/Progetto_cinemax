@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static cinemax.model.Proiezione.FORMATO;
 
@@ -55,7 +56,30 @@ import static cinemax.model.Proiezione.FORMATO;
         List<Proiezione> risultato = new ArrayList<>();
 
         for(Proiezione p : proiezioni){
-                risultato.add(p);
+
+            // titolo, anche parziale
+            if(titolo!=null && !p.getFilm().getTitolo().toLowerCase().contains(titolo.toLowerCase()))
+                continue;
+
+            //genere, tipologia del film
+            if(genere!=null && !p.getFilm().getGenere().toLowerCase().equals(genere.toLowerCase()))
+                continue;
+
+            //intervallo di date
+            LocalDate giorno = p.getDataOra().toLocalDate();
+            if(dataInizio != null && giorno.isBefore(dataInizio))
+                continue;
+            if(datafine != null && giorno.isAfter(datafine))
+                continue;
+
+            //costo dei biglietto
+            if(prezzomin != null && p.getPrezzo() < prezzomin)
+                continue;
+
+            if(prezzomax != null && p.getPrezzo() > prezzomax)
+                continue;
+
+            risultato.add(p);
         } return risultato;
 
     }
