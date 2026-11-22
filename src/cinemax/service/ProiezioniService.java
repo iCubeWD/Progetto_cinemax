@@ -3,24 +3,18 @@ package cinemax.service;
 
 import cinemax.model.Film;
 import cinemax.model.Proiezione;
-import cinemax.model.Ruolo;
-import cinemax.model.Utente;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
-import static cinemax.model.Proiezione.FORMATO;
 
 
- public class ProiezioniService {
+public class ProiezioniService {
 
     private static final DateTimeFormatter FORMATO_FILE = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private final ArrayList<Proiezione> proiezioni = new ArrayList<Proiezione>();
@@ -52,7 +46,7 @@ import static cinemax.model.Proiezione.FORMATO;
 
     }
 
-    public List<Proiezione> cercaProiezioni(String titolo, String genere, LocalDate dataInizio, LocalDate datafine, Double prezzomin, Double prezzomax) {
+    public List<Proiezione> cercaProiezioni(String titolo, String genere, LocalDate dataInizio, LocalDate datafine, Double prezzomin) {
         List<Proiezione> risultato = new ArrayList<>();
 
         for(Proiezione p : proiezioni){
@@ -74,9 +68,6 @@ import static cinemax.model.Proiezione.FORMATO;
 
             //costo dei biglietto
             if(prezzomin != null && p.getPrezzo() < prezzomin)
-                continue;
-
-            if(prezzomax != null && p.getPrezzo() > prezzomax)
                 continue;
 
             risultato.add(p);
