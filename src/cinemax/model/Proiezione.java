@@ -42,8 +42,7 @@ public class Proiezione {
 
     @Override
     public String toString() {
-        return film.getTitolo() + " - " + dataOra.format(FORMATO)
-                + " - " + String.format("%.2f", prezzo) + " €";
+        return film.getTitolo() + " - " + dataOra.format(FORMATO) + " - " + String.format("%.2f", prezzo) + " €";
     }
 
 }

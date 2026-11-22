@@ -18,8 +18,6 @@ public class Cinemax {
         MenuConsole menu = new MenuConsole(auth);
         menu.avvia();
 
-
-
         //  ProiezioniService proiezioniService = new ProiezioniService();
 
         //List<Proiezione> risultato = proiezioniService.cercaProiezioni(null,null,null,null,null,null);

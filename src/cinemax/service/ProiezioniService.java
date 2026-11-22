@@ -25,7 +25,7 @@ import static cinemax.model.Proiezione.FORMATO;
     private final ArrayList<Proiezione> proiezioni = new ArrayList<Proiezione>();
     //private final ArrayList<Film> film = new ArrayList<Film>();
 
-    /*public ProiezioniService() throws IOException {
+    public ProiezioniService() throws IOException {
         caricaProiezioni();
     }
 
@@ -39,8 +39,13 @@ import static cinemax.model.Proiezione.FORMATO;
             }
             String[] c = righe.get(i).split(";", -1);
 
-            Proiezione p = new Proiezione(c[0], c[1], c[2], c[3], c[4], c[5], Ruolo.valueOf(c[6]));
-            proiezioni.add(u);
+            Film f = new Film(c[1],c[2],c[3],Integer.parseInt(c[4]),Integer.parseInt(c[5]),Integer.parseInt(c[6]));
+
+            LocalDateTime dataOra = LocalDateTime.parse(c[0],FORMATO_FILE);
+
+            Proiezione p = new Proiezione(f,dataOra,Double.parseDouble(c[7]));
+
+            proiezioni.add(p);
 
         }
 
@@ -57,7 +62,7 @@ import static cinemax.model.Proiezione.FORMATO;
 
     public void visualizzaProiezioni() {
 
-    }*/
+    }
      }
 
 
