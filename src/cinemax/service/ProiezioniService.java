@@ -19,13 +19,13 @@ import java.util.List;
 import static cinemax.model.Proiezione.FORMATO;
 
 
-/* public class ProiezioniService {
+ public class ProiezioniService {
 
     private static final DateTimeFormatter FORMATO_FILE = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private final ArrayList<Proiezione> proiezioni = new ArrayList<Proiezione>();
     //private final ArrayList<Film> film = new ArrayList<Film>();
 
-    public ProiezioniService() throws IOException {
+    /*public ProiezioniService() throws IOException {
         caricaProiezioni();
     }
 
@@ -39,7 +39,7 @@ import static cinemax.model.Proiezione.FORMATO;
             }
             String[] c = righe.get(i).split(";", -1);
 
-            Proiezione p = new Proiezione(c[0], c[1], c[2], c[3], nascita, c[5], Ruolo.valueOf(c[6]));
+            Proiezione p = new Proiezione(c[0], c[1], c[2], c[3], c[4], c[5], Ruolo.valueOf(c[6]));
             proiezioni.add(u);
 
         }
@@ -57,7 +57,8 @@ import static cinemax.model.Proiezione.FORMATO;
 
     public void visualizzaProiezioni() {
 
-    }
-*/
+    }*/
+     }
+
 
 

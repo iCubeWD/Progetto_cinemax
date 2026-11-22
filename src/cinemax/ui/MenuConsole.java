@@ -92,7 +92,7 @@ public class MenuConsole {
         }
     }
 
-    private void login() {
+    private void login(){
         System.out.print("Username: ");
         String username = scanner.nextLine();
         System.out.print("Password: ");

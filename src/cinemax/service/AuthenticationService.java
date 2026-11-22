@@ -55,7 +55,7 @@ public class AuthenticationService {
         //lo username è nuovo quindi creo l'utente
             Utente nuovo = new Utente(nome, cognome, username, passwordHash, data, domicilio, Ruolo.CLIENTE);
 
-        //preparo la riga del file con .joim
+        //preparo la riga del file con .join
             String dataTesto = (data == null) ? "" : data.toString();
             String riga = String.join(";", nome, cognome, username, passwordHash, dataTesto, domicilio, "CLIENTE"); //unisce i pezzi mettendo il ; in mezzo, nello stesso ordine delle colonne del file: nome, cognome, username, password, data, domicilio, ruolo
 
