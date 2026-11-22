@@ -136,18 +136,39 @@ public class MenuConsole {
         }
     }
 
+    public void ricercaProiezioni(){
+
+        //chiedo il titolo (non vuoto) e poi salvo in una var
+        //chiedo il genere (non vuoto) e poi salvo in una var
+        //chiedo datainizio (non vuoto) e poi salvo in una var
+        //chiedo datafine (non vuoto) e poi salvo in una var
+        //chiedo prezzomin (non vuoto) e poi salvo in una var
+        //chiedo prezzomax (non vuoto) e poi salvo in una var
+
+        //risultati = cercaProiezioni(titolo,genere,....)
+
+        //for(..)
+
+        //chiedo il numero, verifico e lo passo a visualizzaproiezioni()
+
+
+    }
+
+
+
+
     private void menuGuest() throws IOException {
         //visualizzaProiezioni(), cercaProiezioni()
 
-        boolean esci=false;
-        while(!esci){
+        boolean esci = false;
+        while (!esci) {
             System.out.println("\nOpzioni disponibili:");
             System.out.println("1) Cerca le proiezioni ");
             System.out.println("2) Visualizza i dettagli delle proiezione");
             System.out.println("3) Registrati");
             System.out.println("4) Torna al menu principale");
 
-            int scelta=leggiScelta();
+            int scelta = leggiScelta();
 
             switch (scelta) {
 
@@ -171,6 +192,8 @@ public class MenuConsole {
                     System.out.println("Scelta non valida, riprova.");
             }
         }
+
+
     }
 
 

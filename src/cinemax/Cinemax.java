@@ -16,12 +16,15 @@ public class Cinemax {
         AuthenticationService auth = new AuthenticationService();
 
 
-        MenuConsole menu = new MenuConsole(auth);
-        menu.avvia();
+      //MenuConsole menu = new MenuConsole(auth);
+        //menu.avvia();
 
-        //ProiezioniService p = new ProiezioniService();
 
-        //System.out.println(p.cercaProiezioni(null,null,null,null,null).size());
+        //test
+
+        ProiezioniService p = new ProiezioniService();
+
+        System.out.println(p.cercaProiezioni("lord of the rings",null,null,null,null,null));
 
         //List<Proiezione> risultato = proiezioniService.cercaProiezioni(null,null,null,null,null,null);
         //System.out.println("Proiezioni trovate: " + risultato.size());

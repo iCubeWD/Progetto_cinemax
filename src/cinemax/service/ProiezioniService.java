@@ -46,9 +46,9 @@ public class ProiezioniService {
 
     }
 
-    public List<Proiezione> cercaProiezioni(String titolo, String genere, LocalDate dataInizio, LocalDate datafine, Double prezzomin) {
+    public List<Proiezione> cercaProiezioni(String titolo, String genere, LocalDate dataInizio, LocalDate datafine, Double prezzomin, Double prezzomax) {
         List<Proiezione> risultato = new ArrayList<>();
-
+        int counter = 0;
         for(Proiezione p : proiezioni){
 
             // titolo, anche parziale
@@ -70,12 +70,18 @@ public class ProiezioniService {
             if(prezzomin != null && p.getPrezzo() < prezzomin)
                 continue;
 
+            if(prezzomax != null && p.getPrezzo() > prezzomax)
+                continue;
+
             risultato.add(p);
+            //System.out.println(counter++ + " " + p.toString());
         } return risultato;
+
 
     }
 
-    public void visualizzaProiezioni() {
+    public void visualizzaProiezioni(int scelta) {
+
 
     }
      }
