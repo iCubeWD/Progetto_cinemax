@@ -80,8 +80,24 @@ public class ProiezioniService {
 
     }
 
-    public void visualizzaProiezioni(int scelta) {
+    public void visualizzaProiezioni(List<Proiezione> risultati, int scelta) {
+        if (risultati == null || scelta < 1 || scelta > risultati.size()) {
+            System.out.println("Selezione non valida.");
+            return;
+        }
 
+        Proiezione p = risultati.get(scelta - 1);
+        System.out.println("\n=== DETTAGLI PROIEZIONE ===");
+        System.out.println("Data e ora: " + p.getDataOra());
+        System.out.println("Costo biglietto: " + p.getPrezzo() + " EUR");
+
+        if (p.getFilm() != null) {
+            System.out.println("Titolo: " + p.getFilm().getTitolo());
+            System.out.println("Genere: " + p.getFilm().getGenere());
+            System.out.println("Regista: " + p.getFilm().getRegista());
+            System.out.println("Anno: " + p.getFilm().getAnno());
+            System.out.println("Durata: " + p.getFilm().getDurataMinuti() + " minuti");
+        }
 
     }
      }

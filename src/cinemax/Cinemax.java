@@ -14,17 +14,17 @@ public class Cinemax {
     public static void main(String[] args) throws IOException {
 
         AuthenticationService auth = new AuthenticationService();
+        ProiezioniService proiezioniService = new ProiezioniService();
 
-
-      //MenuConsole menu = new MenuConsole(auth);
-        //menu.avvia();
+      MenuConsole menu = new MenuConsole(auth, proiezioniService);
+      menu.avvia();
 
 
         //test
 
-        ProiezioniService p = new ProiezioniService();
+        //ProiezioniService p = new ProiezioniService();
 
-        System.out.println(p.cercaProiezioni("lord of the rings",null,null,null,null,null));
+        //System.out.println(p.cercaProiezioni("lord of the rings",null,null,null,null,null));
 
         //List<Proiezione> risultato = proiezioniService.cercaProiezioni(null,null,null,null,null,null);
         //System.out.println("Proiezioni trovate: " + risultato.size());
