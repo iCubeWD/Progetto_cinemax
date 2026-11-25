@@ -159,6 +159,55 @@ public class MenuConsole {
         }
     }
 
+    private void menuCliente() {
+        boolean esci = false;
+        while (!esci) {
+
+            System.out.println("\n=== MENU CLIENTE ===");
+            System.out.println("1) Cerca e visualizza proiezioni");
+            System.out.println("2) Prenota");
+            System.out.println("3) Le mie prenotazioni");
+            System.out.println("4) Logout");
+
+            System.out.println("Scelta: ");
+
+            switch (leggiScelta()) {
+
+                case 1:
+                    ricercaProiezioni();
+                    break;
+
+                case 2:
+                    //prenota()
+                    break;
+
+                case 3:
+                    //visualizzaPrenotazioni(), modificaPrenotazioni, cancellaPrenotazione()
+                    break;
+
+                case 4:
+                    esci = true;
+                    break;
+
+                default:
+                    System.out.println("Scelta non valida, riprova.");
+
+
+            }
+
+        }
+    }
+
+
+    private void menuProiezionista(){
+
+    }
+    private void menuBigliettaio(){
+
+    }
+
+
+
     public void ricercaProiezioni(){
 
         //chiedo il titolo (non vuoto) e poi salvo in una var
@@ -259,7 +308,10 @@ public class MenuConsole {
             System.out.println("2) Registrati");
             System.out.println("3) Torna al menu principale");
 
+            System.out.print("Scelta: ");
             int scelta = leggiScelta();
+
+
 
             switch (scelta) {
 

@@ -89,7 +89,7 @@ public class ProiezioniService {
         Proiezione p = risultati.get(scelta - 1);
         System.out.println("\n=== DETTAGLI PROIEZIONE ===");
         System.out.println("Data e ora: " + p.getDataOra());
-        System.out.println("Costo biglietto: " + p.getPrezzo() + " EUR");
+        System.out.println("Costo biglietto: " + p.getPrezzo() + " euro");
 
         if (p.getFilm() != null) {
             System.out.println("Titolo: " + p.getFilm().getTitolo());
